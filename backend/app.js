@@ -21,10 +21,10 @@ app.use("/api/v1", user);
 
 app.use(cors({ origin: "*" }));
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "/opt/render/project/src/frontend/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+  res.sendFile(path.resolve(__dirname, "/opt/render/project/src/frontend/build/index.html"));
 });
 
 module.exports = app;
